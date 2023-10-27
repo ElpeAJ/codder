@@ -1,0 +1,30 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+}
+
+.title {
+  text-align: center;
+}
+
+h1 {
+  position: fixed;
+  top: 0;
+  background-color: blue;
+  text-align: center;
+}
+
+.allLinks {
+  margin-top: 70px;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  padding: 20px 30px;
+  margin: 10px 15px;
+  display: inline-block;
+}

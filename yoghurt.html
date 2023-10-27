@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Greek Yoghurt 🥛</title>
+    <style>
+      body {
+        font-family: "Cerebri Sans", Arial, Helvetica, sans-serif;
+        background: linear-gradient(to bottom, #a1df0fa3, #2c3d2c);
+      }
+      h2 {
+        text-align: center;
+        border: 1px solid #885df1;
+        border-radius: 7px;
+        line-height: 1.5;
+        padding: 5px;
+      }
+      h1 {
+        text-align: center;
+        color: #885df1;
+      }
+
+      .container {
+        max-width: 40vw;
+        margin: 0 auto;
+        padding: 30px 60px;
+        background-color: beige;
+        border-radius: 15px;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+      }
+
+      img {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+        border-radius: 5px;
+      }
+
+      p {
+        line-height: 1.5;
+        font-size: 14px;
+      }
+
+      button {
+        display: block;
+        margin: 20px auto;
+        background-color: #885df1;
+        color: white;
+        font-size: 18px;
+        border: none;
+        border-radius: 7px;
+        padding: 15px 20px;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+      }
+
+      button:hover {
+        opacity: 0.8;
+        cursor: pointer;
+        /*color: #885df1;
+        background-color: white;*/
+        transition: color 500ms ease-in-out;
+      }
+
+      .learn_more {
+        display: block;
+        margin-top: 10px;
+        text-decoration: none;
+        color: #885df1;
+        font-size: 12px;
+      }
+
+      .learn_more:hover {
+        text-decoration: underline;
+      }
+
+      footer {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>I love Yoghurt</h1>
+      <h2>Especially Greek Yogurt</h2>
+      <img src="img/greek-yoghurt-in-bowl.jpg" alt="greek Yoghurt" />
+      <p>
+        Strained yogurt, Greek yogurt, yogurt cheese, sack yogurt, or kerned
+        yogurt is yogurt that has been strained to remove most of its whey,
+        resulting in a thicker consistency than normal unstrained yogurt, while
+        still preserving the distinctive sour taste of yogurt.
+      </p>
+      <a
+        href="https://en.wikipedia.org/wiki/Strained_yogurt"
+        target="_blank"
+        class="learn_more"
+      >
+        Learn from wikipedia</a
+      >
+      <button class="buy_button">👉🏾👉 Buy Greek Yoghurt</button>
+      <footer>
+        <p>
+          This page was built by
+          <a
+            href="https://www.linkedin.com/in/elpedia-arthur-3767b8152/"
+            target="_blank"
+            >Elpedia Arthur</a
+          >
+          <a href="mailto: elpediaarthurjunior@gmail.com">Email me</a>
+          <a href="tel:+233597961103">Call me</a>
+        </p>
+      </footer>
+    </div>
+    <script>
+      function buyYoghurt() {
+        let name = prompt("What is your name?");
+        let email = prompt("What is your email?");
+        let emoji = prompt("What is your favorite emoji?");
+
+        alert(`Thank you ${name}! We'll be in touch by email, meanwhile 
+            have a lot of yoghurt! ${emoji}`);
+      }
+      let buyButton = document.querySelector(".buy_button");
+      buyButton.addEventListener("click", buyYoghurt);
+    </script>
+  </body>
+</html>

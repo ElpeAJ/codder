@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        text-align: center;
+        padding: 0px;
+        margin: 0px;
+      }
+
+      h2 {
+        color: #0909d3;
+      }
+
+      .container {
+        margin: 0 auto;
+      }
+
+      .current {
+        padding: 0px;
+        font-size: 21px;
+      }
+
+      p {
+        padding: 10px 0px 0px;
+        color: rgb(19, 19, 19);
+        font-weight: 400;
+      }
+
+      .day {
+        font-size: 13px;
+      }
+
+      .highlight {
+        margin: 15px 515px;
+        padding: 15px 0px;
+      }
+
+      .highlight:hover {
+        background-color: #e2e2c5;
+        border-radius: 7px;
+      }
+
+      button {
+        color: white;
+        background-color: #2733e0;
+        border: 1px solid #2733e0;
+        border-radius: 20px;
+        padding: 10px 20px;
+        margin-bottom: 15px;
+      }
+
+      button:hover {
+        background-color: rgb(60, 3, 3);
+        color: white;
+        border: 1px solid #2733e0;
+        transition: all 400ms ease-in-out;
+      }
+
+      .shade {
+        color: rgb(80, 78, 78);
+      }
+
+      .author {
+        margin: 0 540px;
+        padding: 0px;
+        background-color: rgba(48, 48, 168, 0.1);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <span class="emoji">🌤️</span>
+      <h2>Currently 21&deg in Tokyo</h2>
+      <p class="current"><span class="shade">13&deg</span> / 23</p>
+      <div class="highlight">
+        <h6 class="day"><span>🌧️</span>Tomorrow</h6>
+        <p><span class="shade">10&deg</span> / 22&deg</p>
+      </div>
+      <div class="highlight">
+        <h6 class="day"><span>🌤️</span>Saturday</h6>
+        <p><span class="shade">15&deg</span> / 17&deg</p>
+      </div>
+      <div class="highlight">
+        <h6 class="day"><span>☀️</span>Sunday</h6>
+        <p><span class="shade">25&deg</span> / 28&deg</p>
+      </div>
+      <button>Change city</button>
+      <p class="author">Coded by Elpedia Arthur</p>
+    </div>
+  </body>
+  <script>
+    function city() {
+      let live = prompt("What city do you live in?");
+      let temperature = prompt("What temperature is it?");
+
+      emoji = document.querySelector(".emoji");
+      h2 = document.querySelector("h2");
+      if (temperature < 0) {
+        emoji.innerHTML = `😔`;
+        h2.innerHTML = `Currently ${temperature}&deg in ${live}`;
+      } else {
+        emoji.innerHTML = `😁`;
+        h2.innerHTML = `Currently ${temperature}&deg in ${live}`;
+      }
+    }
+    let button = document.querySelector("button");
+    button.addEventListener("click", city);
+  </script>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    nav li {
+      display: inline-block;
+      padding: 12px 10px;
+      color: white;
+    }
+
+    .nav-flex {
+      display: flex;
+      justify-content: space-between;
+      flex: wrap;
+      background-color: rgb(121, 39, 39);
+    }
+
+    .logo {
+      padding: 12px 15px;
+    }
+
+    .nav {
+      text-align: center;
+      background-color: rgb(121, 39, 39);
+    }
+
+    .links {
+      padding: 12px 15px;
+    }
+
+    section .container {
+      display: flex;
+      justify-content: space-around;
+      flex: wrap;
+    }
+
+    .left {
+      width: 65vw;
+    }
+
+    .right {
+      width: 30vw;
+    }
+
+    img {
+      width: 50px;
+      height: 50px;
+    }
+
+    .nav:hover {
+      cursor: pointer;
+      background-color: black;
+    }
+
+    body {
+      padding: 0px;
+      margin: 0px;
+      overflow-x: hidden;
+    }
+
+    ol {
+      display: inline-block;
+    }
+
+    .horizontalW .photo {
+      width: 200px;
+      height: auto;
+      padding: 0px 47px;
+    }
+
+    .photo {
+      width: 250px;
+      height: auto;
+      padding: 0px 47px;
+    }
+
+    .imgntext,
+    .imgntext1 {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      align-items: center;
+      max-width: 100%;
+      margin-bottom: 70px;
+    }
+
+    .horizontal {
+      box-shadow: 5px 5px 10px rgba(50, 50, 50, 0.3);
+      text-align: center;
+      padding: 25px 15px;
+      border-radius: 8px;
+      margin: 15px;
+      width: 450px;
+      background-color: #f0f0f0;
+    }
+
+    .horizontalW {
+      box-shadow: 5px 5px 10px rgba(50, 50, 50, 0.3);
+      text-align: center;
+      padding: 25px 15px;
+      border-radius: 8px;
+      margin: 15px;
+      width: 315px;
+      background-color: #f0f0f0;
+    }
+
+    .verticalW {
+      box-shadow: 5px 5px 10px rgba(50, 50, 50, 0.3);
+      text-align: center;
+      padding: 25px 0px;
+      border-radius: 8px;
+      margin: 15px;
+      width: 315px;
+      background-color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .vertical {
+      box-shadow: 5px 5px 10px rgba(50, 50, 50, 0.3);
+      text-align: center;
+      padding: 25px 0px;
+      border-radius: 8px;
+      margin: 15px;
+      width: 450px;
+      background-color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+    }
+  </style>
+  <body>
+    <div class="nav-flex">
+      <img class="logo" src="../img/banku.jpeg" />
+      <nav class="nav">
+        <ul>
+          <li class="nav">Home</li>
+          <li class="nav">News</li>
+          <li class="nav">Entertainment</li>
+          <li class="nav">Business</li>
+          <li class="nav">Opinion</li>
+          <li class="nav">Research</li>
+          <li class="nav">Live TV/Radio</li>
+          <li class="nav">Media</li>
+        </ul>
+      </nav>
+      <div class="links">
+        <img src="../img/insta.jpeg" alt="instagram" />
+        <img src="../img/facebook.png" alt="facebook" />
+      </div>
+    </div>
+    <section>
+      <div class="container">
+        <div class="left">
+          <img src="elpe.jpg" alt="Elpe's img" />
+          <form action="">
+            <label for=""></label><input type="text" /><input
+              type="text"
+            /><input type="text" />
+          </form>
+          <div class="imgntext">
+            <nav class="horizontalW">
+              <img class="photo" src="../img/banku.jpeg" alt="banku image" />
+              <ol>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+              </ol>
+            </nav>
+            <nav class="horizontalW">
+              <img class="photo" src="../img/banku.jpeg" alt="banku image" />
+              <ol>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+              </ol>
+            </nav>
+            <nav class="horizontalW">
+              <img class="photo" src="../img/banku.jpeg" alt="banku image" />
+              <ol>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+              </ol>
+            </nav>
+            <nav class="horizontalW">
+              <img class="photo" src="../img/banku.jpeg" alt="banku image" />
+              <ol>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+              </ol>
+            </nav>
+          </div>
+          <div class="imgntext1">
+            <nav class="verticalW">
+              <img class="photo" src="../img/banku.jpeg" alt="banku image" />
+              <ol>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+              </ol>
+            </nav>
+            <nav class="verticalW">
+              <img class="photo" src="../img/bankus.jpeg" alt="banku image" />
+              <ol>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+              </ol>
+            </nav>
+            <nav class="verticalW">
+              <img class="photo" src="../img/bankus.jpeg" alt="banku image" />
+              <ol>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+              </ol>
+            </nav>
+            <nav class="verticalW">
+              <img class="photo" src="../img/bankus.jpeg" alt="banku image" />
+              <ol>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+        <div class="right">
+          <div class="imgntext1">
+            <nav class="vertical">
+              <img class="photo" src="../img/banku.jpeg" alt="banku image" />
+              <ol>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+              </ol>
+            </nav>
+            <nav class="vertical">
+              <img class="photo" src="../img/banku.jpeg" alt="banku image" />
+              <ol>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+              </ol>
+            </nav>
+            <nav class="vertical">
+              <img class="photo" src="../img/bankus.jpeg" alt="banku image" />
+              <ol>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+              </ol>
+            </nav>
+            <nav class="vertical">
+              <img class="photo" src="../img/bankus.jpeg" alt="banku image" />
+              <ol>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+              </ol>
+            </nav>
+            <nav class="vertical">
+              <img class="photo" src="../img/bankus.jpeg" alt="banku image" />
+              <ol>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+              </ol>
+            </nav>
+            <nav class="vertical">
+              <img class="photo" src="../img/bankus.jpeg" alt="banku image" />
+              <ol>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+              </ol>
+            </nav>
+            <nav class="vertical">
+              <img class="photo" src="../img/bankus.jpeg" alt="banku image" />
+              <ol>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+              </ol>
+            </nav>
+            <nav class="vertical">
+              <img class="photo" src="../img/bankus.jpeg" alt="banku image" />
+              <ol>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+              </ol>
+            </nav>
+            <nav class="vertical">
+              <img class="photo" src="../img/bankus.jpeg" alt="banku image" />
+              <ol>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+              </ol>
+            </nav>
+            <nav class="vertical">
+              <img class="photo" src="../img/bankus.jpeg" alt="banku image" />
+              <ol>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+              </ol>
+            </nav>
+            <nav class="vertical">
+              <img class="photo" src="../img/bankus.jpeg" alt="banku image" />
+              <ol>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+              </ol>
+            </nav>
+            <nav class="vertical">
+              <img class="photo" src="../img/bankus.jpeg" alt="banku image" />
+              <ol>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
