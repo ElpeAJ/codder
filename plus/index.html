@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Elpedia J. Arthur" />
+    <meta
+      name="keywords"
+      content="weather, chart, report, temperature, precipitation"
+    />
+    <meta
+      name="description"
+      content="A simple HTML/CSS/Bootstrap weather chart"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/style.css" />
+    <script
+      src="https://kit.fontawesome.com/acc40c9880.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Weather Chart</title>
+  </head>
+  <body>
+    <div class="container weatherBody">
+      <div class="row">
+        <div class="col-7 p-1">
+          <div class="row text-center">
+            <div class="col-4 size2 point">Current Cities</div>
+          </div>
+          <div class="row text-center">
+            <div class="col-2 current">
+              <i class="fa-solid fa-sun sun size1"></i>Accra
+            </div>
+            <div class="col-2 current">
+              <i class="fa-solid fa-cloud-rain size1"></i>Kumasi
+            </div>
+            <div class="col-2 current">
+              <i class="fa-solid fa-cloud-sun-rain cloud size1"></i>Wa
+            </div>
+          </div>
+        </div>
+        <div class="col-3 offset-2">
+          <div class="input-group mb-3">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter a City"
+              aria-label="Enter a City"
+              aria-describedby="button-addon2"
+            />
+            <div class="input-group-append">
+              <button
+                class="btn btn-outline-secondary"
+                type="button"
+                id="button-addon2"
+              >
+                <i class="fa-brands fa-searchengin fa-fade fa-xl search"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col size">Ghana, Accra</div>
+        <div class="col size">Tuesday 11:55am</div>
+        <div class="col size">Scorching sun</div>
+        <div class="col-4 size">
+          precipitation: 5%<br />Humidity: 81%<br />Wind: 16km/h
+        </div>
+      </div>
+
+      <table class="table mx-auto" style="height: 30vh">
+        <tbody>
+          <tr>
+            <td class="align-middle">
+              <strong class="boldest">32&deg</strong>
+
+              <div class="line-hottest close"></div>
+              <br /><i class="fa-solid fa-sun fa-beat-fade sun"></i>Today
+            </td>
+            <td class="align-middle">
+              <strong class="bold">23&deg</strong>
+              <div class="line-hotter close"></div>
+              <br /><i class="fa-solid fa-sun fa-beat-fade sun"></i>Tomorrow
+            </td>
+            <td class="align-middle">
+              <strong class="bold">17&deg</strong>
+              <div class="line-cool close"></div>
+              <br /><i class="fa-solid fa-sun fa-beat-fade sun"></i>Monday
+            </td>
+            <td class="align-middle">
+              <strong class="bold">16&deg</strong>
+              <div class="line-cool close"></div>
+              <br /><i class="fa-solid fa-sun fa-beat-fade sun"></i>Tuesday
+            </td>
+            <td class="align-middle">
+              <strong class="bold">30&deg</strong>
+              <div class="line-hottest close"></div>
+              <br /><i class="fa-solid fa-sun fa-beat-fade sun"></i>Wednesday
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <footer>
+        <p class="author">Done by:</p>
+        <button class="link" type="button" class="btn btn-link">
+          <a
+            href="https://www.linkedin.com/in/elpedia-arthur-3767b8152/"
+            target="_blank"
+            >Elpedia J. Arthur</a
+          >
+        </button>
+      </footer>
+    </div>
+  </body>
+</html>
