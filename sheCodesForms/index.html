@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms with JS</title>
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <h1>🖱️ JS Forms</h1>
+    <h2></h2>
+    <form id="search-form">
+      <input
+        type="text"
+        placeholder="Search for a city"
+        autocomplete="off"
+        autofocus="on"
+        id="search-text-input"
+      />
+      <input type="submit" value="Search" />
+    </form>
+    <script>
+      function searchCity(event) {
+        event.preventDefault();
+        let search_input = document.querySelector("#search-text-input");
+        let h2 = document.querySelector("h2");
+        if (search_input.value) {
+          h2.innerHTML = `Searching for ${search_input.value}...`; //.value accesses the value of the input
+        } else {
+          h2.innerHTML = `Please type a city`;
+        }
+      }
+      let form1 = document.querySelector("#search-form"); // This selects the form
+      form1.addEventListener("submit", searchCity); // This eventListener listens to when you hit submit or hit enter on the keyboard
+    </script>
+  </body>
+</html>
