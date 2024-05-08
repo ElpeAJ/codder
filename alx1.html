@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Static Webpage</title>
+    <link rel="stylesheet" href="styles/3-common.css" />
+    <link rel="stylesheet" href="styles/3-header.css" />
+    <link rel="stylesheet" href="styles/3-footer.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        height: 70px;
+        width: 100%;
+        background-color: #ffffff;
+        border-bottom: 1px solid #cccccc;
+      }
+
+      body {
+        color: #484848;
+        font-family: Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: 30px auto;
+      }
+
+      .filters {
+        background-color: white;
+        height: 70px;
+        width: 100%;
+        border: 1px solid #dddddd;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+      }
+
+      .filters div {
+        position: relative;
+        height: 100%;
+        width: 25%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      button {
+        font-size: 18px;
+        background-color: #ff5a5f;
+        height: 48px;
+        width: 20%;
+        border-radius: 4px;
+        float: right;
+        margin-inline: auto 30px;
+      }
+
+      button:hover {
+        opacity: 0.9;
+      }
+
+      .locations,
+      .amenities {
+        height: 100%;
+        width: 25%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* padding-left: 30px; */
+        text-align: center;
+      }
+
+      .locations {
+        border-right: 1px solid #dddddd;
+      }
+
+      .locations h3,
+      .amenities h3 {
+        font-weight: 600;
+      }
+
+      .locations h4,
+      .amenities h4 {
+        font-weight: 400;
+        font-size: 14px;
+      }
+
+      .locations:hover .popover,
+      .amenities:hover .popover {
+        position: absolute;
+        bottom: 100%; /* Position below the trigger element */
+        width: 100%;
+        height: 150px;
+        background-color: #fafafa;
+        border: 1px solid #dddddd;
+        border-radius: 4px;
+        display: block; /* Show the dropdown on hover */
+      }
+
+      .popover {
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        background-color: #fafafa;
+        border: 1px solid #dddddd;
+        border-radius: 4px;
+        padding: 50px 0;
+        display: none;
+      }
+
+      .popover li {
+        list-style: none;
+      }
+
+      .popover li:first-child {
+        list-style: none;
+      }
+
+      .filters div:first-child .popover ul:last-child {
+        margin-top: 20px;
+      }
+
+      .popover h2 {
+        font-size: 16px;
+        font-weight: 600;
+      }
+
+      .places {
+        margin-block: 20px;
+        margin-inline: 10px;
+      }
+
+      .places h1 {
+        font-size: 30px;
+      }
+
+      .places .listings {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin: 20px;
+      }
+
+      .places .listings article {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 390px;
+        border: 1px solid #ff5a5f;
+        border-radius: 4px;
+        padding: 20px;
+      }
+
+      .places .listings h2 {
+        font-size: 30px;
+        text-align: center;
+      }
+
+      .price_by_night {
+        color: #ff5a5f;
+        border: 4px solid #ff5a5f;
+        border-radius: 50%;
+        min-width: 60px;
+        width: 60px;
+        height: 60px;
+        font-size: 30px;
+        padding: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        right: 10px;
+        position: absolute;
+      }
+
+      .information {
+        height: 80px;
+        border-top: 1px solid #dddddd;
+        border-bottom: 1px solid #dddddd;
+        display: flex;
+        gap: 20px;
+        margin-top: 60px;
+      }
+
+      .max_guest {
+        background-image: url("img/icon_bath.png");
+      }
+
+      .number_rooms {
+        background-image: url("img/icon_bath.png");
+      }
+
+      .number_bathrooms {
+        background-image: url("img/icon_bath.png");
+      }
+
+      .information > * {
+        width: 100px;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+      }
+
+      .information .number_rooms,
+      .information .max_guest,
+      .information .number_bathrooms {
+        padding-bottom: 50px;
+      }
+
+      .places .listings .amenities,
+      .places .listings .reviews {
+        margin-top: 40px;
+      }
+
+      .places .listings .amenities h2,
+      .places .listings .reviews h2 {
+        font-size: 16px;
+        text-align: left;
+        border-bottom: solid #dddddd 1px;
+      }
+
+      .places .listings ul {
+        padding-top: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .places .listings .amenities ul li {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .places .listings .amenities ul li:nth-child(1) div {
+        background-image: url("../images/icon_tv.png");
+      }
+
+      .places .listings .amenities ul li:nth-child(2) div {
+        background-image: url("../images/icon_wifi.png");
+      }
+
+      .places .listings .amenities ul li:nth-child(3) div {
+        background-image: url("../images/icon_pets.png");
+      }
+
+      .places .listings .amenities ul li div {
+        width: 20px;
+        aspect-ratio: 1;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+
+      footer {
+        /* position: relative; */
+        height: 60px;
+        width: 100%;
+        background-color: #ffffff;
+        display: flex;
+        justify-content: center;
+        position: fixed;
+        bottom: 0;
+        border-top: 1px solid #cccccc;
+      }
+    </style>
+  </head>
+  <body>
+    <header></header>
+    <div class="container">
+      <section class="filters">
+        <div class="locations">
+          <h3>States</h3>
+          <h4>Haahaha</h4>
+
+          <ul class="popover">
+            <ul>
+              <li>
+                <h2>Arizona:</h2>
+              </li>
+              <li>Tucson</li>
+              <li>Sedona</li>
+              <li>Chandler</li>
+            </ul>
+            <ul>
+              <li>
+                <h2>California:</h2>
+              </li>
+              <li>Sacramento</li>
+              <li>Oakland</li>
+              <li>Fresno</li>
+            </ul>
+          </ul>
+        </div>
+        <div class="amenities">
+          <h3>Amenities</h3>
+          <h4>Haahaha</h4>
+
+          <ul class="popover">
+            <li>Game Room</li>
+            <li>Theatre</li>
+            <li>Laundry Room</li>
+            <li>Kitchen</li>
+            <li>Storage</li>
+            <li>etc...</li>
+          </ul>
+        </div>
+        <button>Search</button>
+      </section>
+      <section class="places">
+        <h1>Places</h1>
+        <div class="listings">
+          <article>
+            <h2>My home</h2>
+            <div class="price_by_night">$50</div>
+            <div class="information">
+              <div class="max_guest">1 guest</div>
+              <div class="number_rooms">2 rooms</div>
+              <div class="number_bathrooms">1 bathroom</div>
+            </div>
+            <div class="user">Owner: Elpe Arthur</div>
+            <div class="description">
+              This is a lovely 2 bedroom and 1 bathroom apartment that can
+              accommodate 2 people. It locates at the center of Shanghai and
+              next to subway line 1. 1 stop to People Square. 2 stops to Bund, 3
+              stops to Jingan Temple.
+            </div>
+            <div class="amenities">
+              <h2>Amenities</h2>
+              <ul>
+                <li>
+                  <div></div>
+                  <span>Amenity 1</span>
+                </li>
+                <li>
+                  <div></div>
+                  <span>Amenity 2</span>
+                </li>
+                <li>
+                  <div></div>
+                  <span>Amenity 3</span>
+                </li>
+              </ul>
+            </div>
+            <div class="reviews">
+              <h2>3 Reviews</h2>
+              <ul>
+                <li>
+                  <h3>From Sonia Pendrah the 1st January 1999</h3>
+                  <p>
+                    I absolutely love this accommodation and will highly
+                    recommend to anyone coming this way!
+                  </p>
+                </li>
+                <li>
+                  <h3>From Gladito the 21st December 1999</h3>
+                  <p>
+                    Oh my God! I just fell in love with the place the moment I
+                    walked in. They keep the place so well.
+                  </p>
+                </li>
+                <li>
+                  <h3>From Growelito Abels the 1st January 2000</h3>
+                  <p>
+                    What a peaceful place to be and enjoy the spring. They have
+                    great environment - highly decorated.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </article>
+          <article>
+            <h2>Tiny house</h2>
+            <div class="price_by_night">$50</div>
+            <div class="information">
+              <div class="max_guest">1 guest</div>
+              <div class="number_rooms">2 rooms</div>
+              <div class="number_bathrooms">1 bathroom</div>
+            </div>
+            <div class="user">Owner: Elpe Arthur</div>
+            <div class="description">
+              This is a lovely 2 bedroom and 1 bathroom apartment that can
+              accommodate 2 people. It locates at the center of Shanghai and
+              next to subway line 1. 1 stop to People Square. 2 stops to Bund, 3
+              stops to Jingan Temple.
+            </div>
+            <div class="amenities">
+              <h2>Amenities</h2>
+              <ul>
+                <li>
+                  <div></div>
+                  <span>Amenity 1</span>
+                </li>
+                <li>
+                  <div></div>
+                  <span>Amenity 2</span>
+                </li>
+                <li>
+                  <div></div>
+                  <span>Amenity 3</span>
+                </li>
+              </ul>
+            </div>
+            <div class="reviews">
+              <h2>3 Reviews</h2>
+              <ul>
+                <li>
+                  <h3>From Sonia Pendrah the 1st January 1999</h3>
+                  <p>
+                    I absolutely love this accommodation and will highly
+                    recommend to anyone coming this way!
+                  </p>
+                </li>
+                <li>
+                  <h3>From Gladito the 21st December 1999</h3>
+                  <p>
+                    Oh my God! I just fell in love with the place the moment I
+                    walked in. They keep the place so well.
+                  </p>
+                </li>
+                <li>
+                  <h3>From Growelito Abels the 1st January 2000</h3>
+                  <p>
+                    What a peaceful place to be and enjoy the spring. They have
+                    great environment - highly decorated.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </article>
+          <article>
+            <h2>A suite</h2>
+            <div class="price_by_night">$50</div>
+            <div class="information">
+              <div class="max_guest">1 guest</div>
+              <div class="number_rooms">2 rooms</div>
+              <div class="number_bathrooms">1 bathroom</div>
+            </div>
+            <div class="user">Owner: Elpe Arthur</div>
+            <div class="description">
+              This is a lovely 2 bedroom and 1 bathroom apartment that can
+              accommodate 2 people. It locates at the center of Shanghai and
+              next to subway line 1. 1 stop to People Square. 2 stops to Bund, 3
+              stops to Jingan Temple.
+            </div>
+            <div class="amenities">
+              <h2>Amenities</h2>
+              <ul>
+                <li>
+                  <div></div>
+                  <span>Amenity 1</span>
+                </li>
+                <li>
+                  <div></div>
+                  <span>Amenity 2</span>
+                </li>
+                <li>
+                  <div></div>
+                  <span>Amenity 3</span>
+                </li>
+              </ul>
+            </div>
+            <div class="reviews">
+              <h2>3 Reviews</h2>
+              <ul>
+                <li>
+                  <h3>From Sonia Pendrah the 1st January 1999</h3>
+                  <p>
+                    I absolutely love this accommodation and will highly
+                    recommend to anyone coming this way!
+                  </p>
+                </li>
+                <li>
+                  <h3>From Gladito the 21st December 1999</h3>
+                  <p>
+                    Oh my God! I just fell in love with the place the moment I
+                    walked in. They keep the place so well.
+                  </p>
+                </li>
+                <li>
+                  <h3>From Growelito Abels the 1st January 2000</h3>
+                  <p>
+                    What a peaceful place to be and enjoy the spring. They have
+                    great environment - highly decorated.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <p>Best School</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practise Mario with Kwesi</title>
+    <style>
+      .sky,
+      .forest {
+        height: 150px;
+      }
+
+      .sky {
+        background-color: rgb(131, 131, 235);
+      }
+
+      .forest {
+        background-color: green;
+      }
+
+      .road {
+        background-color: grey;
+        height: 200px;
+        position: relative;
+      }
+      .lane {
+        border: 5px dashed white;
+        width: 100%;
+        position: absolute;
+        top: 50%;
+      }
+
+      img {
+        width: 150px;
+        /* height: 100px; */
+      }
+
+      .moto1,
+      .moto2 {
+        animation: drive 5s linear 100 400ms;
+      }
+
+      @keyframes drive {
+        from {
+          transform: translateX(1300px);
+        }
+
+        to {
+          transform: translateX(-1119px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sky"></div>
+    <div class="forest"></div>
+    <div class="road">
+      <img class="moto1" src="image/kwesi-removebg-preview.png" />
+      <div class="lane"></div>
+      <img class="moto2" src="image/kwesi-removebg-preview.png" />
+    </div>
+  </body>
+</html>

@@ -65,22 +65,43 @@
       </p>
       <br />
       <button>Apply Now</button>
+      <ul>
+        <li>Paris</li>
+        <li>Roma</li>
+        <li>Barcelona</li>
+      </ul>
     </section>
     <script>
-      function check() {
-        let name = prompt("Please tell us your first name");
-        let age = prompt("How old are you?");
-
-        h1 = document.querySelector("h1");
-        if (age >= 18) {
-          h1.innerHTML = "Hi, " + name + "! Welcome to SheCodes !";
-        } else {
-          h1.innerHTML = "Sorry, " + name + "! You cannot join SheCodes";
-        }
+      function showCity(cityEle) {
+        console.log(cityEle.innerHTML);
       }
+      let cities = document.querySelectorAll("li"); // returns array of 3 elements
 
-      let button = document.querySelector("button");
-      button.addEventListener("click", check);
+      cities.forEach(showCity);
+
+      // function check() {
+      //   let name = prompt("Please tell us your first name");
+      //   let age = prompt("How old are you?");
+
+      //   se = document.querySelector("h1");
+      //   if (age >= 18) {
+      //     se.innerHTML = "Hi, " + name + "! Welcome to SheCodes !";
+      //   } else {
+      //     se.innerHTML = "Sorry, " + name + "! You cannot join SheCodes";
+      //   }
+      // }
+
+      // let button = document.querySelector("button");
+      // button.addEventListener("click", check);
+      // function showCity(city){
+      //   console.log(city)
+      // }
+      // let cities = ["lon", "Cape", "Berlin"]
+      // cities.forEach(showCity);
+      debugger;
+      let names = ["El", "Sonny", "Lito"];
+      console.table(names);
+      // console.log(names);
     </script>
   </body>
 </html>
